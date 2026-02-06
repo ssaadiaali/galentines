@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galentine Day 💖</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('pattern.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .galentine-container {
+            background: rgba(255, 255, 255, 0.95);
+            border: 4px solid palevioletred;
+            border-radius: 18px;
+            padding: 45px;
+            max-width: 700px;
+            text-align: center;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            color: palevioletred;
+            font-size: 48px;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 14px 26px;
+            font-size: 16px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #yesBtn {
+            background-color: #ff5c8a;
+            color: white;
+        }
+
+        #yesBtn:hover {
+            background-color: palevioletred;
+            transform: scale(1.08);
+        }
+
+        #noBtn {
+            background-color: #ffc0cb;
+            color: #333;
+        }
+
+        #message {
+            margin-top: 35px;
+            font-size: 24px;
+            color: palevioletred;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        #message {
+    font-style: italic;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <div class="galentine-container">
+        <h1>Will you be my Galentine? 💕</h1>
+
+        <div class="buttons">
+            <button id="yesBtn">Yes, I’ll be your Galentine 💖</button>
+            <button id="noBtn">No,Maybe someday🙃</button>
+        </div>
+
+        <p id="message"></p>
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById("yesBtn");
+        const noBtn = document.getElementById("noBtn");
+        const message = document.getElementById("message");
+
+        yesBtn.addEventListener("click", () => {
+            message.textContent = "YAYYY 🥹💖 Officially my Galentine. I love you forever!";
+            message.style.opacity = "1";
+        });
+
+        noBtn.addEventListener("mouseover", () => {
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+
+            noBtn.style.position = "absolute";
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+        });
+    </script>
+
+</body>
+</html>
+
